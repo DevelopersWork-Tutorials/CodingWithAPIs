@@ -1,5 +1,5 @@
 
-function youtubeAPI(){
+function API(){
         var keys = [
 			'key Replaced  by your own'
 		];
