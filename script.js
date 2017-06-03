@@ -22,33 +22,30 @@ function designHTML(){
 
 function searchCode(keyword){
 	this.keyword = keyword || 'Developers@Work';
-	var Api = youtubeAPI();
-	$.get('https://www.googleapis.com/youtube/v3/search',{
+	var Api = API();
+	$.ajax({
+		url:'https://www.googleapis.com/youtube/v3/search',
+		data:{
 			q:this.keyword,
 			key:Api,
 			type:'channel',
 			part:'snippet'
-		},function(data){
+		},
+		async:false,
+		success:function(data){
 			temp = data.items;
 			for(var i=0;i<temp.length;i++){
 				channelId[i] = temp[i].snippet.channelId;
 				channelTitle[i] = temp[i].snippet.title;
 				channelThumbnail[i] = temp[i].snippet.thumbnails.default.url;
 			}
-		});
-		designHTML();
+		}
+	});
+		
 }
 
 function buttonClicked(){
 	var keyword = document.getElementById('searchBar').value;
 	searchCode(keyword);
-	
+	designHTML();
 }
-
-
-
-
-
-
-
-
