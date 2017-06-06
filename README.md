@@ -1,4 +1,4 @@
-# YouTube Subscribers,Views,Comments,Videos Count of Channel
+# YouTube Subscribers,Views,Comments,Videos Count of a Channel
 
 To support me and my work you can do it from https://patreon.com/DevelopersWork
 
