@@ -1,6 +1,6 @@
 var videoId = [],videoTitle = [],videoThumbnail = [],temp =[];
 
-function designHTML(){
+function embedVideosAfterSearch(){
 	//document.getElementById('display').innerHTML = '';
 	var count=1;
 	for(var i=0;i<temp.length;i++){
@@ -11,7 +11,7 @@ function designHTML(){
 }
 
 
-function searchCode(keyword){
+function searchVideosCode(keyword){
 	this.keyword = keyword || 'Developers@Work';
 	var Api = API();
 	$.ajax({
@@ -37,8 +37,8 @@ function searchCode(keyword){
 
 function buttonClicked(){
 	var keyword = document.getElementById('searchBar').value;
-	searchCode(keyword);
-	designHTML();
+	searchVideosCode(keyword);
+	embedVideosAfterSearch();
 }
 
 
