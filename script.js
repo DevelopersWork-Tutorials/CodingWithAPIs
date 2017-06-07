@@ -16,13 +16,13 @@ function getNewChannel(){
 	searchCode(this.keyword);
 	var i=0;
 	//for(i=0;i<temp.length;i++){
-		countCode(channelId[i] , i);
-		displaychannelscount(i);
+		channelsCountCode(channelId[i] , i);
+		displayChannelsCount(i);
 	//}
 }
 
 
-function countCode(channelId , i=0){
+function channelsCountCode(channelId , i=0){
 	var API_KEY = API();
 	$.ajax({
 		url:'https://www.googleapis.com/youtube/v3/channels',
@@ -42,7 +42,7 @@ function countCode(channelId , i=0){
 	});
 }
 
-function displaychannelscount(i){
+function displayChannelsCount(i){
 	$('#display').append('\
 		<div id="channel'+channelId[i]+'">\
 			<img src="'+channelThumbnail[i]+'">\
