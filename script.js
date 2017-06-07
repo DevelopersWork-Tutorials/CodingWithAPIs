@@ -1,6 +1,6 @@
 var channelId = [],channelTitle = [],channelThumbnail = [],temp =[];
 
-function designHTML(){
+function placeChannelsAfterSearch(){
 	//document.getElementById('display').innerHTML = '';
 	var count=1;
 	for(var i=0;i<temp.length;i++){
@@ -20,7 +20,7 @@ function designHTML(){
 }
 
 
-function searchCode(keyword){
+function searchChannelsCode(keyword){
 	this.keyword = keyword || 'Developers@Work';
 	var Api = API();
 	$.ajax({
@@ -44,7 +44,7 @@ function searchCode(keyword){
 		
 }
 
-function buttonClicked(){
+function buttonClickedSearchChannels(){
 	var keyword = document.getElementById('searchBar').value;
 	searchCode(keyword);
 	designHTML();
