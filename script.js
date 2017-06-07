@@ -35,7 +35,7 @@ function searchVideosCode(keyword){
 	});
 }
 
-function buttonClicked(){
+function buttonClickedSearchVideos(){
 	var keyword = document.getElementById('searchBar').value;
 	searchVideosCode(keyword);
 	embedVideosAfterSearch();
