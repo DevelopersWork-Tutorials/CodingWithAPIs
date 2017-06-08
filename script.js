@@ -1,4 +1,4 @@
- var subscriberCount = [],viewCount=[],commentCount=[],videoCount = [];
+ var channelSubscriberCount = [], channelViewCount = [], channelCommentCount = [], channelVideoCount = [];
 
 function getNewChannel(){
 	document.getElementById('display').innerHTML = '';
@@ -24,23 +24,23 @@ function channelsCountCode(channelId , i=0){
 		async :false,
 		success : function(data){
 			var temp = data.items[0];
-			subscriberCount[i] = temp.statistics.subscriberCount;
-			viewCount[i] = temp.statistics.viewCount;
-			commentCount[i] = temp.statistics.commentCount;
-			videoCount[i] = temp.statistics.videoCount;
+			channelSubscriberCount[i] = temp.statistics.subscriberCount;
+			channelViewCount[i] = temp.statistics.viewCount;
+			channelCommentCount[i] = temp.statistics.commentCount;
+			channelVideoCount[i] = temp.statistics.videoCount;
 		}
 	});
 }
 
-function displayChannelsCount(i){
+function displayChannelsCount(i = 0){
 	$('#display').append('\
 		<div id="channel'+channelId[i]+'">\
 			<img src="'+channelThumbnail[i]+'">\
 			<h1 id="'+channelTitle[i]+'" onClick="getNewChannel()">'+channelTitle[i]+'</h1>\
-			<h2 id="'+channelId[i]+'">Subscribers : '+subscriberCount[i]+'</h2>\
-			<h2 id="'+channelId[i]+'">Channel Views: '+viewCount[i]+'</h2>\
-			<h2 id="'+channelId[i]+'">Videos : '+videoCount[i]+'</h2>\
-			<h2 id="'+channelId[i]+'">Comments : '+commentCount[i]+'</h2>\
+			<h2 id="'+channelId[i]+'subscribers">Subscribers : '+channelSubscriberCount[i]+'</h2>\
+			<h2 id="'+channelId[i]+'views">Channel Views: '+channelViewCount[i]+'</h2>\
+			<h2 id="'+channelId[i]+'videos">Videos : '+channelVideoCount[i]+'</h2>\
+			<h2 id="'+channelId[i]+'comments">Comments : '+channelCommentCount[i]+'</h2>\
 		</div>\
 	');
 }
